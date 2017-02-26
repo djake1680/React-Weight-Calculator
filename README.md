@@ -1,26 +1,8 @@
-# ReduxSimpleStarter
+Weight Loss Calculator
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
+Built using: Javascript, React, React-Router, jQuery, HTML, CSS
 
-###Getting Started###
+This web application is based on a simple calculator that is a little bit different than most weight loss calculators out there.  
 
-There are two methods for getting started with this repo.
+The calculator, instead of calculating a "goal-date" based on how many pounds you'd like to lose per week, calculates a per-week weight loss goal based on your own projected end date.  
 
-####Familiar with Git?#####
-Checkout this repo, install dependencies, then start the gulp process with the following:
-
-```
-	> git clone git@github.com:StephenGrider/ReduxSimpleStarter.git
-	> cd ReduxSimpleStarter
-	> npm install
-	> npm start
-```
-
-####Not Familiar with Git?#####
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
-
-```
-	> npm install
-	> npm start
-```
-# React-Weight-Calculator
