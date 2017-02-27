@@ -92,13 +92,13 @@ export default class WeightForm extends Component {
                                 </div>
 
                                 <div className="row">
-                                    <div className="col-xs-6 col-sm-6">
+                                    <div className="datepicker-col col-xs-12 col-lg-6">
                                         <label>Start Date: <span className="start-date-error" ></span></label>
                                         <div>
                                             <DayPicker onDayClick={ this.startDayClick }/>
                                         </div>
                                     </div>
-                                    <div className="col-xs-6 col-sm-6">
+                                    <div className="datepicker-col col-xs-12 col-lg-6">
                                         <label>Goal Date: <span className="days-left-error"></span> </label>
                                         <div>
                                             <DayPicker onDayClick={ this.handleDayClick }/>

@@ -24,19 +24,29 @@ export default class WeightForm extends Component {
                 let percentComplete = ((totalLost / (startingWeight - goalsWeight)) * 100).toFixed(2);
                 let initPerWeekGoal = ((startingWeight - goalsWeight) / startDays * 7).toFixed(2);
 
-                $(".per-week-change").html((initPerWeekGoal - perWeekGoal).toFixed(2));
+                $(".remaining-days").html(daysToGoal);
                 $(".init-per-week-goal").html(initPerWeekGoal + " lbs");
                 $(".total-lost").html(totalLost + " lbs");
                 $(".to-goal").html(toGoal + " lbs");
                 $(".per-week-goal").html(perWeekGoal + " lbs");
                 $(".percent-complete").html(percentComplete + "%");
+
+                if(initPerWeekGoal < perWeekGoal) {
+                    $(".per-week-goal").addClass("under-goal");
+                }
+                else if (initPerWeekGoal >= perWeekGoal) {
+                    $(".per-week-goal").addClass("over-goal");
+                }
             }
         }
         else {
-            console.log("Please enter all values");
+            $('.init-per-week-goal').html(' ');
+            $(".total-lost").html(" ");
+            $(".to-goal").html(" ");
+            $(".per-week-goal").html(" ");
+            $(".percent-complete").html(" ");
         }
 
-        $(".remaining-days").html(daysToGoal);
 
     }
 
@@ -47,32 +57,32 @@ export default class WeightForm extends Component {
                     <button className="calculate-button btn btn-primary" onClick={this.calcGoals}>Calculate</button>
                     <div className="">
                         <h2>Days Left</h2>
-                        <p><span className="remaining-days"></span></p>
+                        <p><span className="remaining-days">___</span></p>
                     </div>
                 </div>
 
-                <div className="col-xs-12 col-sm-6">
+                <div className="results-section col-xs-12 col-sm-6">
                     <h3>Total Weight Lost</h3>
-                    <p className="total-lost"></p>
+                    <p className="total-lost">___</p>
                     <h3>Pounds to lose to your goal</h3>
-                    <p className="to-goal"></p>
-                    <table>
-                        <thead>How many pounds to lose per week to achieve your goal</thead>
+                    <p className="to-goal">___</p>
+                    <h3>Pounds per week to get to your goal: </h3>
+                    <table className="per-week-table">
+                        <thead>
+                            <tr>
+                                <th>Original Goal</th>
+                                <th>New Goal</th>
+                            </tr>
+                        </thead>
                         <tbody>
                         <tr>
-                            <th>Original Goal</th>
-                            <th>New Goal</th>
-                            <th>+/-</th>
-                        </tr>
-                        <tr>
-                            <th className="init-per-week-goal"></th>
-                            <th className="per-week-goal"></th>
-                            <th className="per-week-change"></th>
+                            <td className="init-per-week-goal">___</td>
+                            <td className="per-week-goal">___</td>
                         </tr>
                         </tbody>
                     </table>
                     <h3>Percent Complete</h3>
-                    <p className="percent-complete"></p>
+                    <p className="percent-complete">___</p>
                 </div>
             </div>
         );
