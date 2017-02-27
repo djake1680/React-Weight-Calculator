@@ -16,23 +16,18 @@ export default class WeightForm extends Component {
             startDay: '',
             data: []
         };
-
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.handleDayClick = this.handleDayClick.bind(this);
-        this.startDayClick = this.startDayClick.bind(this);
     }
 
-    handleChange(event) {
+    handleChange = (event) => {
         this.setState({[event.target.name]: event.target.value});
         //console.log(this.state);
-    }
+    };
 
-    handleSubmit(event) {
+    handleSubmit = (event) => {
         event.preventDefault();
-    }
+    };
 
-    handleDayClick(day) {
+    handleDayClick = (day) => {
         this.setState({ selectedDay: day });
         let todayDate = new Date();
         todayDate = todayDate.getTime();
@@ -49,9 +44,9 @@ export default class WeightForm extends Component {
             $(".days-left-error").html('');
             this.setState({daysLeft: totalDays});
         }
-    }
+    };
 
-    startDayClick(day) {
+    startDayClick = (day) => {
         this.setState({ startDay: day});
         let todayDate = new Date();
         todayDate = todayDate.getTime();
@@ -68,7 +63,7 @@ export default class WeightForm extends Component {
             $(".start-date-error").html("");
         }
 
-    }
+    };
 
 
     render() {
